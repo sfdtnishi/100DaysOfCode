@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class decimalBinaryConversion {
+    public static void decimalToBinary(int n) {
+
+        int i = 0;
+        int rem=0;
+        int[] binary = new int[32];
+        while (n>0) {
+            binary[i]=n % 2;
+            n = n / 2;
+            i+=1;
+        }
+        for(int j=i-1;j>=0;j--){
+            System.out.print(binary[j]);
+        }
+        System.out.println();
+
+    }
+
+    public static void main(String args[]){
+        Scanner s = new Scanner(System.in);
+        System.out.print("enter the decimal number: ");
+        int n = s.nextInt();
+        System.out.print(n+" in binary will be: ");
+        decimalToBinary(n);
+        
+    }
+}
