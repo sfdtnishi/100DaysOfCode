@@ -1,4 +1,3 @@
-package com.practice;
 import java.util.*;
 
 public class GCDof2No {
