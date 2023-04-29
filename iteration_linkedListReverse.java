@@ -1,17 +1,18 @@
- public void removeLast(){
-        if(head==null){
-            System.out.println("The list is empty");
+ public void reverseLinkedList(){
+    Node prev = head ;
+        Node currNode = head.next;
+
+        if(head==null || head.next == null){
             return;
         }
-        Node secondLast = head;
-        Node last = head.next;
-        if(last.next==null){
-            head=null;
-        }
 
-        while(last.next!=null){
-         last = last.next;
-         secondLast = secondLast.next;
+        while(currNode!=null){
+            Node nextNode = currNode.next;
+            currNode.next = prev;
+
+            prev = currNode;
+            currNode = nextNode;
         }
-        secondLast.next=null;
+        head.next  = null;
+        head = prev;
     }
